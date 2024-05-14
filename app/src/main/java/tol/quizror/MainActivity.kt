@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import tol.quizror.ui.theme.QuizrorTheme
 
-//Quiz "Rules of the Road"
+//Quiz "Rules of the Road" - Викторина "Правила дорожного движения"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
