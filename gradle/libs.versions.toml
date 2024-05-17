@@ -11,6 +11,7 @@ composeBom = "2024.05.00"
 hiltAndroid = "2.51.1"
 roomVersion = "2.6.1"
 kspVersion = "1.9.24-1.0.20"
+lifecycleViewmodelCompose = "2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +34,8 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVers
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+
+lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 
 [plugins]
 
