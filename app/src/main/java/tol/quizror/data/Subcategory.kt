@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Subcategory(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id: Int,
     val subcategorySign: String,
     val countSigns: Int

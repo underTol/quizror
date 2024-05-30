@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class QuizSign(
-    @PrimaryKey (autoGenerate = true)
+    @PrimaryKey
     val id: Int,
     val question: String,
     val idSign: Int
