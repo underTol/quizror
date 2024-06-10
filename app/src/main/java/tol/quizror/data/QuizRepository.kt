@@ -5,20 +5,17 @@ import javax.inject.Inject
 
 class QuizRepository @Inject constructor(private val questionDao: QuestionDao) {
     suspend fun getQuestion(): String {
-        var testQuestion: String = "Begin"
-        Log.i("MyLog", "Repo run")
+        var question: String
+        var sign: Int
         try {
-            Log.i("MyLog", "Repo run in Try")
-            val question = questionDao.getRandomQuestion()
-            Log.i("MyLog", "Repo question: $question")
-            testQuestion = question.question
-            Log.i("MyLog", "Repo testQuestion: $testQuestion")
+            val quizSign = questionDao.getRandomQuestion()
+            question = quizSign.question
+            sign = quizSign.idSign
         } catch (e: Exception) {
-//            e.printStackTrace();
             Log.e("MyLog", "Ошибка:", e)
+            question = "Репозиторий: ошибка вызова questionDao.getRandomQuestion"
+            sign = 0
         }
-
-
-        return testQuestion
+        return question
     }
 }

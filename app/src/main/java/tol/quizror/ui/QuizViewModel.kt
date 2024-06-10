@@ -28,10 +28,8 @@ class QuizViewModel @Inject constructor(private val repository: QuizRepository) 
 
     private fun loadNewQuestion() {
         viewModelScope.launch {
-            Log.i("MyLog", "VM run")
 //            val (question, images) = repository.getQuestion()
             val question = repository.getQuestion()
-            Log.i("MyLog", "VM question: $question")
 //            _state.value = QuizState(question = question)
         }
     }
