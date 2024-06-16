@@ -12,9 +12,10 @@ import javax.inject.Inject
 
 data class QuizState(
     val question: String = "",
-//    val images: List<ImageOption> = emptyList(),
-//    val selectedImage: ImageOption? = null,
-    val correct: Boolean? = null
+    val correctImage: Int? = null,
+    val images: List<String> = emptyList(),
+    val selectedImage: String? = null,
+    val correct: Boolean? = null,
 )
 
 @HiltViewModel
@@ -28,9 +29,11 @@ class QuizViewModel @Inject constructor(private val repository: QuizRepository) 
 
     private fun loadNewQuestion() {
         viewModelScope.launch {
-//            val (question, images) = repository.getQuestion()
-            val question = repository.getQuestion()
-//            _state.value = QuizState(question = question)
+            val (question, correctImage) = repository.getQuestion()
+            val idImages = repository.getIdSigns(correctImage)
+            val images = idImages.map { "id$it" }
+            _state.value = QuizState(question = question, correctImage = correctImage, images = images)
+
         }
     }
 
@@ -40,7 +43,7 @@ class QuizViewModel @Inject constructor(private val repository: QuizRepository) 
 //        _state.value = _state.value.copy(selectedImage = image, correct = correct)
 //    }
 
-// Для UI
+    // Для UI
     private val _counter = MutableStateFlow(0)
     val counter: StateFlow<Int> = _counter
 

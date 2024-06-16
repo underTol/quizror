@@ -10,6 +10,6 @@ data class Sign(
     val nameSign: String,
     val categorySign: String,
     val subcategorySign: String,
-    val subcategorySign2: String,
+    val subcategorySign2: String?,
     val numberInRor: String,
 )
